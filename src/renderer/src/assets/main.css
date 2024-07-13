@@ -7,3 +7,16 @@
   font-family: "ShareTech";
   src: url("./fonts/ShareTech-Regular.ttf");
 }
+
+@layer base {
+  #root {
+    @apply h-full;
+  }
+
+  html,body {
+    @apply h-full;
+    @apply select-none;
+    @apply font-mono antialiased;
+    @apply overflow-hidden;
+  }
+}

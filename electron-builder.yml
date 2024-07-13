@@ -1,5 +1,5 @@
 appId: com.electron.app
-productName: fallout-anomaly
+productName: FalloutAnomalyLauncher
 directories:
   buildResources: build
 files:
@@ -14,7 +14,7 @@ asarUnpack:
 win:
   executableName: Fallout Anomaly Launcher
 nsis:
-  artifactName: ${name}-${version}-setup.${ext}
+  artifactName: FA setup.${ext}
   shortcutName: ${productName}
   uninstallDisplayName: ${productName}
   createDesktopShortcut: always
