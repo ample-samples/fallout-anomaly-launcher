@@ -1,45 +1,17 @@
+import { Route, Routes } from 'react-router-dom'
+import { Start } from './routes/Start'
+import { Settings } from './routes/Settings'
 import falloutBackground from './assets/darkly-atmospheric-retail-environment-rendering.jpg'
+// import { useEffect } from 'react'
 
 function App(): JSX.Element {
-  const ipcHandle = (): void => window.electron.ipcRenderer.send('this will launch FA eventually')
-
   return (
-    <>
-      <div className="h-full flex flex-row">
-        <div className="flex flex-col gap-[2px] font-ShareTech text-xl text-fgreen1 relative z-10 p-4 w-56 pb-8 justify-end bg-[#000000cc]">
-          <p className="w-full text-3xl hover:text-black hover:bg-fgreen1 px-4 mb-1">
-            <button onClick={ipcHandle}>Play</button>
-          </p>
-          <p className="w-full hover:text-black hover:bg-fgreen1 px-4">
-            <a
-              href="https://doc.clickup.com/9014300118/d/h/8cmpkep-6174/ae0788e9f3d2615"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Install Guide
-            </a>
-          </p>
-          <p className="w-full hover:text-black hover:bg-fgreen1 px-4">
-            <a href="">Game Guides</a>
-          </p>
-          <p className="w-full hover:text-black hover:bg-fgreen1 px-4">
-            <a href="https://discord.com/invite/falloutanomaly" target="_blank" rel="noreferrer">
-              Discord
-            </a>
-          </p>
-          <p className="w-full hover:text-black hover:bg-fgreen1 px-4">
-            <a href="">Endorse</a>
-          </p>
-          <p className="w-full hover:text-black hover:bg-fgreen1 px-4">
-            <a href="">Launcher Settings</a>
-          </p>
-          <p className="w-full hover:text-black hover:bg-fgreen1 px-4">
-            <a href="">Make a Report</a>
-          </p>
-        </div>
-        <img alt="logo" className="w-full absolute inset-0" src={falloutBackground} />
-      </div>
-    </>
+    <div style={{ backgroundImage: `url(${falloutBackground})`, height: '100vh', width: '100vw', backgroundSize: "100% 100%"}}>
+      <Routes>
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/" element={<Start />} />
+      </Routes>
+    </div>
   )
 }
 

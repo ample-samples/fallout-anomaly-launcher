@@ -11,7 +11,11 @@ module.exports = {
         fgreen1: '#00ee00',
         fgreen2: '#008e00',
         fgreen3: '#005f00',
-        fgreen4: '#002f00',
+        fgreen4: '#002f00'
+      },
+      backgroundImage: {
+        'fallout-background':
+          "url('src/renderer/src/assets/darkly-atmospheric-retail-environment-rendering.jpg')"
       }
     }
   },
