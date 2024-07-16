@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 
 export const Start = (): JSX.Element => {
   const ipcHandle = (): void => window.electron.ipcRenderer.send('this will launch FA eventually')
-  console.log(document.documentElement.clientHeight)
 
   const navigate = useNavigate()
 
