@@ -8,6 +8,11 @@
   src: url("./fonts/ShareTech-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Overseer";
+  src: url("./fonts/Overseer.otf");
+}
+
 @layer base {
   #root {
     @apply h-full;

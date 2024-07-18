@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       ShareTech: ['"ShareTech"', 'system-ui', 'sans-serif'],
+      Overseer: ['Overseer', 'system-ui', 'sans-serif'],
       mono: ['"ShareTech"', 'system-ui', 'monospace']
     },
     extend: {
