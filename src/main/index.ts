@@ -1,7 +1,8 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
-import { join } from 'path'
+import { app, shell, BrowserWindow, ipcMain, dialog } from 'electron'
+import path, { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+const { spawn } = require('node:child_process');
 
 function createWindow(): void {
   // Create the browser window.
@@ -55,6 +56,17 @@ app.whenReady().then(() => {
 
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
+
+  const anomalyRoot = path.join(__dirname, '..', '..', '..', '..', '..')
+
+  // Lauch F4SE
+  ipcMain.on('start', () => {
+    // dialog.showMessageBox({ message: path.join(__dirname, '..') })
+    dialog.showMessageBox({ message: anomalyRoot })
+    // dialog.showMessageBox(path.join(__dirname, '..'))
+    spawn(path.join(anomalyRoot, 'mods', 'Fallout 4 Script Extender (F4SE) - NG', 'Root', 'f4se_loader.exe'), [])
+  })
+
 
   createWindow()
 

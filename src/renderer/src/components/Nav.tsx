@@ -1,11 +1,16 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
 export const Nav = (): JSX.Element => {
   const navigate = useNavigate()
   return (
     <nav>
-      <h1 className="border-b-white b text-white" onClick={() => navigate('/')}>Go back</h1>
+      <h1
+        style={{ fontSize: '50px' }}
+        className="text-5xl border-b-white text-white"
+        onClick={() => navigate('/')}
+      >
+        ⬅
+      </h1>
     </nav>
   )
 }
-

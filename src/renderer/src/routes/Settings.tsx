@@ -1,10 +1,13 @@
-import { Nav } from '@renderer/components/Nav'
+import { MainPanel } from '@renderer/components/MainPanel'
 
 export const Settings = (): JSX.Element => {
   return (
-    <div className="w-full h-full bg-[#000000cc]">
-      <Nav />
-      <h1 className="text-red-500 font-ShareTech">Settings</h1>
+    <div
+      style={{ display: 'grid', gridTemplateColumns: '224px calc(100% - 224px)' }}
+      className="h-full w-full"
+    >
+      <MainPanel highlight="settings" />
+      <div className="bg-[#000000cc] backdrop-blur-[1px] m-6 rounded-xl"></div>
     </div>
   )
 }
