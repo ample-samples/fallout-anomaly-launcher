@@ -3,6 +3,7 @@ module.exports = {
   content: ['./src/**/*.{html,js,ts,tsx}'],
   theme: {
     fontFamily: {
+      sans: ['Overseer', 'system-ui', 'sans-serif'],
       ShareTech: ['"ShareTech"', 'system-ui', 'sans-serif'],
       Overseer: ['Overseer', 'system-ui', 'sans-serif'],
       mono: ['"ShareTech"', 'system-ui', 'monospace']

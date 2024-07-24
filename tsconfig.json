@@ -3,5 +3,12 @@
   "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.web.json" }],
   "rules": {
     "react/prop-types": "off"
+  },
+  "baseUrl": "./src",
+  "paths": {
+    "@renderer/*": ["src/renderer/src/*"],
+    "@main/*": ["src/main/*"],
+    "@preload/*": ["src/preload/*"],
+    "@assets/*": ["src/renderer/src/assets"]
   }
 }

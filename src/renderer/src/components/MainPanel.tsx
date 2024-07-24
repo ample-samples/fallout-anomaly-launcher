@@ -14,16 +14,9 @@ export const MainPanel = (props: Props): JSX.Element => {
   }
 
   const menuItems = [
-    <button
-      id="start"
-      key="start"
-      className="w-full text-3xl hover:text-black hover:bg-white px-4 mb-1 inline text-left"
-      onClick={ipcHandle}
-    >
-      Play
-    </button>,
-    <p id="help" key="help" className="w-full hover:text-black hover:bg-white px-4">
+    <p id="help" key="help">
       <a
+        className="w-full hover:text-black hover:bg-white px-4 block"
         href="https://doc.clickup.com/9014300118/d/h/8cmpkep-6174/ae0788e9f3d2615"
         target="_blank"
         rel="noreferrer"
@@ -31,16 +24,18 @@ export const MainPanel = (props: Props): JSX.Element => {
         Get Help
       </a>
     </p>,
-    <p id="guides" key="guides" className="w-full hover:text-black hover:bg-white px-4">
-      <a href="">Game Guides</a>
+    <p id="guides" key="guides">
+      <a href="" className="w-full hover:text-black hover:bg-white px-4 block">
+        Game Guides
+      </a>
     </p>,
     <p
       onClick={() => navigate('/settings')}
       id="settings"
       key="settings"
-      className="w-full hover:text-black hover:bg-white px-4"
+      className="w-full hover:text-black hover:bg-white px-4 cursor-pointer"
     >
-      <span>Launcher Settings</span>
+      Launcher Settings
     </p>
     // <p className="w-full hover:text-black hover:bg-white px-4">
     //   <a href="https://discord.com/invite/falloutanomaly" target="_blank" rel="noreferrer">
@@ -57,7 +52,15 @@ export const MainPanel = (props: Props): JSX.Element => {
 
   return (
     <div className="h-full flex flex-row">
-      <div className="flex flex-col gap-[2px] font-Overseer text-xl text-white relative p-4 w-56 pb-24 justify-end bg-[#000000cc] backdrop-blur-[1px]">
+      <div className="flex flex-col gap-[2px] font-Overseer text-xl text-white relative p-4 w-56 pb-24 justify-end bg-[#00000077] backdrop-blur-[1px] shadow-[0px_0px_4px_rgba(0,0,0,1)]">
+        <button
+          id="start"
+          key="start"
+          className="w-full text-3xl hover:text-black hover:bg-white px-4 mb-1 inline text-left"
+          onClick={ipcHandle}
+        >
+          Play
+        </button>
         {menuItems.map((item) =>
           item.props.id === highlight ? (
             <span key={item.props.id} className="underline">
