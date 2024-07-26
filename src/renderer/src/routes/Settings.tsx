@@ -11,7 +11,7 @@ import { useState } from 'react'
 
 export const Settings = (): JSX.Element => {
   const navigate = useNavigate()
-  const [selectedENB, setSelectedENB] = useState('No ENB')
+  const [selectedENB, setSelectedENB] = useState('none')
 
   const handleClose = (): void => {
     navigate('/')
@@ -22,12 +22,12 @@ export const Settings = (): JSX.Element => {
   }
 
   const shadSelect =
-    <div className="bg-[#ffffff1a] border-[1px] border-[#35e28c] rounded-full self-center px-2 my-1"><Select onValueChange={handleENBChange}>
-      <SelectTrigger className="highlight-none border-none">
-        <SelectValue placeholder="Select"></SelectValue>
+    <div className='w-full'><Select onValueChange={handleENBChange}>
+      <SelectTrigger className="highlight-none bg-[#ffffff1a] border-[1px] border-[#35e28c] rounded-full self-center px-2 my-1">
+        <SelectValue></SelectValue>
       </SelectTrigger>
       <SelectContent className='bg-[#00000077] border-[#777777] border-[1px] rounded-[12px]'>
-        <SelectGroup className='text-white focus:none'>
+        <SelectGroup className='text-white'>
           <SelectItem className='focus:none cursor-pointer' value="No ENB">No ENB</SelectItem>
           <SelectItem className='focus:none cursor-pointer' value="ENB 1">ENB 1</SelectItem>
           <SelectItem className='focus:none cursor-pointer' value="ENB 2">ENB 2</SelectItem>
@@ -40,19 +40,15 @@ export const Settings = (): JSX.Element => {
     {
       description: 'Select Profile',
       settingInput: shadSelect
-      // settingInput: (
-      //   <select className="bg-[#00000000] highlight-none focus:outline-none appearance-none"> <option className="bg-[#00000000] appearance-none" value="ENB">
-      //       ENB 1
-      //     </option>
-      //     <option className="bg-[#00000000]" value="ENB">
-      //       ENB 2
-      //     </option>
-      //     <option className="bg-[#00000000]" value="ENB">
-      //       ENB 3
-      //     </option>
-      //   </select>
-      // )
-    }
+    },
+    {
+      description: 'Select Profile',
+      settingInput: shadSelect
+    },
+    {
+      description: 'Select Profile',
+      settingInput: shadSelect
+    },
   ]
 
   return (
@@ -67,10 +63,10 @@ export const Settings = (): JSX.Element => {
           <img onClick={handleClose} className="h-8 self-center align-middle" src={cross} alt="" />
         </nav>
         <section>
-          <hr className="" />
-          <div className="grid grid-cols-2 divide-x gap-6">
-            <section>
-              col 1
+          <hr className="mb-4" />
+          <div className="grid grid-cols-2 gap-6">
+            <section className='grid grid-rows-2 gap-4'>
+              <SettingPanel title="ENB" settingItems={settings} />
               <SettingPanel title="ENB" settingItems={settings} />
             </section>
             <section>col 2</section>
