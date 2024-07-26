@@ -73,11 +73,21 @@ module.exports = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' }
+        },
+        'slide-up': {
+          from: { transform: 'translateY(var(500px))' },
+          to: { transform: 'translateY(0)' }
+        },
+        'slide-down': {
+          from: { transform: 'translateY(0)' },
+          to: { transform: 'translateY(var(500px))' }
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'slide-up': 'slide-up 1s ease-out',
+        'slide-down': 'slide-down 1s ease-out'
       }
     }
   },

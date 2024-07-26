@@ -12,22 +12,20 @@
     "react/prop-types": "off"
   },
   "compilerOptions": {
-    "baseUrl": "./src"
-  },
-  "paths": {
-    "@renderer/*": [
-      "src/renderer/src/*"
-    ],
-    "@main/*": [
-      "src/main/*"
-    ],
-    "@preload/*": [
-      "src/preload/*"
-    ],
-    "@assets/*": [
-      "src/renderer/src/assets"
-    ],
+    "baseUrl": "./src",
     "paths": {
+      "@renderer/*": [
+        "src/renderer/src/*"
+      ],
+      "@main/*": [
+        "src/main/*"
+      ],
+      "@preload/*": [
+        "src/preload/*"
+      ],
+      "@assets/*": [
+        "src/renderer/src/assets"
+      ],
       "@/*": [
         "src/renderer/src/*"
       ]

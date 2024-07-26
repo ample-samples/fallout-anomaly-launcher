@@ -1,5 +1,5 @@
 import { MainPanel } from '@renderer/components/MainPanel'
-import { SettingsPanel } from '@renderer/components/SettingsPanel'
+import { SettingPanel } from '@renderer/components/SettingPanel'
 import cross from '../assets/close-svgrepo-com.svg'
 import { useNavigate } from 'react-router-dom'
 
@@ -35,9 +35,9 @@ export const Settings = (): JSX.Element => {
       className="h-full w-full text-white"
     >
       <MainPanel highlight="settings" />
-      <div className="bg-[#00000077] backdrop-blur-[1px] m-6 px-2 rounded-xl shadow-[0px_0px_-15px_rgba(0,0,0,1)]">
+      <div className="bg-[#00000077] backdrop-blur-[1px] m-6 px-6 rounded-xl shadow-[0px_0px_-15px_rgba(0,0,0,1)]">
         <nav className="flex align-middle justify-between">
-          <span className="px-4 my-4 text-xl text-white self-center align-middle">Settings</span>
+          <span className="px-2 my-4 text-xl text-white self-center align-middle">Settings</span>
           <img onClick={handleClose} className="h-8 self-center align-middle" src={cross} alt="" />
         </nav>
         <section>
@@ -45,7 +45,7 @@ export const Settings = (): JSX.Element => {
           <div className="grid grid-cols-2 divide-x gap-6">
             <section>
               col 1
-              <SettingsPanel title="ENB" settingItems={settings} />
+              <SettingPanel title="ENB" settingItems={settings} />
             </section>
             <section>col 2</section>
           </div>

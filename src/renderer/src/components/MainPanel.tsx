@@ -14,18 +14,8 @@ export const MainPanel = (props: Props): JSX.Element => {
   }
 
   const menuItems = [
-    <p id="help" key="help">
-      <a
-        className="w-full hover:text-black hover:bg-white px-4 block"
-        href="https://doc.clickup.com/9014300118/d/h/8cmpkep-6174/ae0788e9f3d2615"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Get Help
-      </a>
-    </p>,
     <p id="guides" key="guides">
-      <a href="" className="w-full hover:text-black hover:bg-white px-4 block">
+      <a href="" className="w-full hover:text-black hover:bg-white px-2 block">
         Game Guides
       </a>
     </p>,
@@ -33,9 +23,19 @@ export const MainPanel = (props: Props): JSX.Element => {
       onClick={() => navigate('/settings')}
       id="settings"
       key="settings"
-      className="w-full hover:text-black hover:bg-white px-4 cursor-pointer"
+      className="w-full hover:text-black hover:bg-white px-2 cursor-pointer"
     >
-      Launcher Settings
+      Settings
+    </p>,
+    <p id="help" key="help">
+      <a
+        className="w-full hover:text-black hover:bg-white px-2 block"
+        href="https://doc.clickup.com/9014300118/d/h/8cmpkep-6174/ae0788e9f3d2615"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Get Help
+      </a>
     </p>
     // <p className="w-full hover:text-black hover:bg-white px-4">
     //   <a href="https://discord.com/invite/falloutanomaly" target="_blank" rel="noreferrer">
@@ -56,7 +56,7 @@ export const MainPanel = (props: Props): JSX.Element => {
         <button
           id="start"
           key="start"
-          className="w-full text-3xl hover:text-black hover:bg-white px-4 mb-1 inline text-left"
+          className="w-full text-3xl hover:text-black hover:bg-white px-2 mb-1 inline text-left"
           onClick={ipcHandle}
         >
           Play

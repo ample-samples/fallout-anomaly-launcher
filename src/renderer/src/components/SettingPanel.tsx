@@ -8,9 +8,9 @@ interface Props {
   settingItems: SettingItem[]
 }
 
-export const SettingsPanel = ({ title, settingItems }: Props): JSX.Element => {
+export const SettingPanel = ({ title, settingItems }: Props): JSX.Element => {
   return (
-    <div className="bg-[#cccccc22] border-white border-[1px] rounded-[16px] p-2">
+    <div className="bg-[#cccccc22] border-[#777777] border-[1px] rounded-[16px] p-2">
       <h1 className="text-2xl">{title}</h1>
       {settingItems.map((option) => (
         <div className="flex flex-row justify-between align-middle" key={option.description}>
