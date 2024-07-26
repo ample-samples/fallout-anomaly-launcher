@@ -52,7 +52,7 @@ export const MainPanel = (props: Props): JSX.Element => {
 
   return (
     <div className="h-full flex flex-row">
-      <div className="flex flex-col gap-[2px] font-Overseer text-xl text-white relative p-4 w-56 pb-24 justify-end bg-[#00000077] backdrop-blur-[1px] shadow-[0px_0px_4px_rgba(0,0,0,1)]">
+      <div className="flex flex-col gap-[2px] font-Overseer text-xl text-white relative p-4 w-56 pb-24 justify-end bg-[#00000077] backdrop-blur-[1px] shadow-[0px_0px_-4px_rgba(0,0,0,1)]">
         <button
           id="start"
           key="start"
