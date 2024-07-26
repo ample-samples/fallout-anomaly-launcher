@@ -27,7 +27,10 @@
         "src/renderer/src/assets"
       ],
       "@/*": [
-        "src/renderer/src/*"
+        "./src/renderer/src/@/*"
+      ],
+      "@shadcomponents/*": [
+        "renderer/src/@/shadcn/components/*"
       ]
     }
   }

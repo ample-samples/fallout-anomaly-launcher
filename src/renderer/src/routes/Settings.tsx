@@ -2,30 +2,56 @@ import { MainPanel } from '@renderer/components/MainPanel'
 import { SettingPanel } from '@renderer/components/SettingPanel'
 import cross from '../assets/close-svgrepo-com.svg'
 import { useNavigate } from 'react-router-dom'
+import {
+  Select, SelectContent, SelectGroup, SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@shadcomponents/ui/select'
+import { useState } from 'react'
 
 export const Settings = (): JSX.Element => {
   const navigate = useNavigate()
+  const [selectedENB, setSelectedENB] = useState('No ENB')
 
   const handleClose = (): void => {
     navigate('/')
   }
 
+  const handleENBChange = (value: string): void => {
+    setSelectedENB(value)
+  }
+
+  const shadSelect =
+    <div className="bg-[#ffffff1a] border-[1px] border-[#35e28c] rounded-full self-center px-2 my-1"><Select onValueChange={handleENBChange}>
+      <SelectTrigger className="highlight-none border-none">
+        <SelectValue placeholder="Select"></SelectValue>
+      </SelectTrigger>
+      <SelectContent className='bg-[#00000077] border-[#777777] border-[1px] rounded-[12px]'>
+        <SelectGroup className='text-white focus:none'>
+          <SelectItem className='focus:none cursor-pointer' value="No ENB">No ENB</SelectItem>
+          <SelectItem className='focus:none cursor-pointer' value="ENB 1">ENB 1</SelectItem>
+          <SelectItem className='focus:none cursor-pointer' value="ENB 2">ENB 2</SelectItem>
+          <SelectItem className='focus:none cursor-pointer' value="ENB 3">ENB 3</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select></div>
+
   const settings = [
     {
       description: 'Select Profile',
-      settingInput: (
-        <select className="bg-[#00000000] highlight-none">
-          <option className="bg-[#00000000]" value="ENB">
-            ENB 1
-          </option>
-          <option className="bg-[#00000000]" value="ENB">
-            ENB 2
-          </option>
-          <option className="bg-[#00000000]" value="ENB">
-            ENB 3
-          </option>
-        </select>
-      )
+      settingInput: shadSelect
+      // settingInput: (
+      //   <select className="bg-[#00000000] highlight-none focus:outline-none appearance-none"> <option className="bg-[#00000000] appearance-none" value="ENB">
+      //       ENB 1
+      //     </option>
+      //     <option className="bg-[#00000000]" value="ENB">
+      //       ENB 2
+      //     </option>
+      //     <option className="bg-[#00000000]" value="ENB">
+      //       ENB 3
+      //     </option>
+      //   </select>
+      // )
     }
   ]
 

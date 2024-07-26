@@ -14,6 +14,7 @@ export default defineConfig({
       alias: {
         '@renderer': resolve('src/renderer/src'),
         '@assets': resolve('src/renderer/src/assets'),
+        '@shadcomponents': resolve('src/renderer/src/@/shadcn/components'),
         '@': path.resolve(__dirname, './src')
       }
     },

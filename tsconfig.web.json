@@ -15,7 +15,10 @@
         "src/renderer/src/*"
       ],
        "@/*": [
-        "./src/renderer/src/*"
+        "./src/renderer/src/@/*"
+      ],
+       "@shadcomponents/*": [
+        "./src/renderer/src/@/shadcn/components/*"
       ]
     }
   }

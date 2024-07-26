@@ -1,11 +1,21 @@
+import { JSXElementConstructor, ReactElement, ReactNode } from "react"
+
 interface SettingItem {
   description: string
-  settingInput: JSX.Element
+  settingInput: ReactNode
 }
 
 interface Props {
   title: string
   settingItems: SettingItem[]
+}
+
+const settingInput = (settingInput) => {
+  return (
+    <div>
+      {settingInput}
+    </div>
+  )
 }
 
 export const SettingPanel = ({ title, settingItems }: Props): JSX.Element => {
@@ -15,9 +25,7 @@ export const SettingPanel = ({ title, settingItems }: Props): JSX.Element => {
       {settingItems.map((option) => (
         <div className="flex flex-row justify-between align-middle" key={option.description}>
           <h1 className="self-center">{option.description}</h1>
-          <div className="bg-[#ffffff1a] border-[1px] border-[#35e28c] rounded-full self-center px-2 my-1">
             {option.settingInput}
-          </div>
         </div>
       ))}
     </div>
