@@ -11,9 +11,12 @@ if (process.contextIsolated) {
   try {
     contextBridge.exposeInMainWorld('electron', electronAPI)
     contextBridge.exposeInMainWorld('api', api)
-  contextBridge.exposeInMainWorld('electron', {
-    start: () => ipcRenderer.send('start')
-  })
+    contextBridge.exposeInMainWorld('electron', {
+      terminalLog: (logItem) => ipcRenderer.send('terminalLog', logItem)
+    })
+    contextBridge.exposeInMainWorld('electron', {
+      start: () => ipcRenderer.send('start')
+    })
   } catch (error) {
     console.error(error)
   }

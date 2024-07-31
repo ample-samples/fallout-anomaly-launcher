@@ -56,6 +56,7 @@ app.whenReady().then(() => {
 
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
+  ipcMain.on('terminalLog', (_, logItem) => console.log(logItem))
 
   const anomalyRoot = path.join(__dirname, '..', '..', '..', '..', '..')
 

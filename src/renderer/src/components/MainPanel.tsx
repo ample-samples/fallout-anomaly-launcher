@@ -8,9 +8,7 @@ export const MainPanel = (props: Props): JSX.Element => {
   const { highlight } = props
   const navigate = useNavigate()
   const ipcHandle = (): void => {
-    console.log('launching')
-    window.electron.ipcRenderer.send('start')
-    window.electron.ipcRenderer.send('ping')
+    window.electron.ipcRenderer.send('terminalLog', 'launching the thing')
   }
 
   const menuItems = [
