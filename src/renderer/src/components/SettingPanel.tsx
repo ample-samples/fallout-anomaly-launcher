@@ -1,4 +1,4 @@
-import { JSXElementConstructor, ReactElement, ReactNode } from "react"
+import { ReactNode } from 'react'
 
 interface SettingItem {
   description: string
@@ -16,8 +16,8 @@ export const SettingPanel = ({ title, settingItems }: Props): JSX.Element => {
       <h1 className="text-xl">{title}</h1>
       {settingItems.map((option) => (
         <div className="flex flex-row justify-between align-middle" key={option.description}>
-          <h1 className="self-center w-full">{option.description}</h1>
-            {option.settingInput}
+          <h1 className="self-center">{option.description}</h1>
+          <div className="w-[150px]">{option.settingInput}</div>
         </div>
       ))}
     </div>
